@@ -44,12 +44,34 @@ main button {
   height: 3rem;
   border-radius: 1.5rem;
   color: hsl(257deg, 40%, 49%);
-  font-family: "Open Sans", sans-serif;
+  font-family: "Poppins", sans-serif;
   margin-bottom: 3rem;
   border: 0;
   box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.22);
+  position: relative;
+  z-index: 1;
+}
+main button:hover::after {
+  opacity: 1;
+}
+main button::after {
+  content: "Register";
+  color: white;
+  padding-top: 14px;
+  position: absolute;
+  background-color: hsl(300deg, 69%, 71%);
+  z-index: 2;
+  opacity: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transition: opacity 250ms;
+  border-radius: 1.5rem;
 }
 main i {
+  text-align: center;
+  vertical-align: bottom;
   border: solid 1px white;
   padding: 0.3rem;
   font-size: 14px;
@@ -59,6 +81,39 @@ main i {
   border-radius: 50%;
 }
 
+@media screen and (min-width: 650px) {
+  body {
+    background-image: url(./images/bg-desktop.svg);
+    background-size: 100%;
+  }
+  .flex {
+    display: flex;
+    text-align: left;
+  }
+  .flex img {
+    margin-left: 65px;
+    margin-top: 100px;
+    width: 140%;
+  }
+  .flex article {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 2rem;
+    margin-top: 150px;
+  }
+  .flex article h2 {
+    font-size: 2.5rem;
+    max-width: 500px;
+  }
+  .flex article p {
+    font-size: 1.1rem;
+  }
+  .flex article .icons {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
 .attribution {
   font-size: 13px;
   text-align: center;
